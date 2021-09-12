@@ -61,3 +61,17 @@ INSERT INTO tb_lessons_done (lesson_id, user_id, offer_id) VALUES (4, 1, 1);
 
 INSERT INTO tb_deliver (uri, moment, status, feedback, correct_count, user_id, offer_id, lesson_id) VALUES ('https://github.com/pedromecf/dslearn', '2021-08-30T12:31:29Z', 0, 'A tarefa foi entregue, aguardando correção', 5, 1, 1, 4);
 
+
+INSERT INTO tb_topic (title, body, moment, author_id, offer_id, lesson_id) VALUES ('Dúvida - Tags Básicas', 'Estou com dúvidas em relação a quando utilizar as tags p e h6, não entendi corretamente quando usar cada um', '2021-08-29T20:56:31Z', 2, 1, 1);
+INSERT INTO tb_topic (title, body, moment, author_id, offer_id, lesson_id) VALUES ('Dúvida - Tags de texto', 'Estou com dúvidas em relação a quando utilizar as tags span, i e strong, não entendi corretamente seu uso', '2021-08-22T10:32:31Z', 1, 1, 2);
+INSERT INTO tb_topic (title, body, moment, author_id, offer_id, lesson_id) VALUES ('Dúvida - Trabalhando com imagens', 'Estou com dúvidas em relação às propriedades da tag img, quando devo usar alt?', '2021-08-12T20:56:31Z', 1, 1, 3);
+INSERT INTO tb_topic (title, body, moment, author_id, offer_id, lesson_id) VALUES ('Dúvida - Tags Básicas', 'Gostaria de entender melhor quando utilizar a tags como H1, H2, etc.. Quando devo usar?', '2021-09-01T13:20:59Z', 1, 1, 1);
+
+
+INSERT INTO tb_topic_likes (topic_id, user_id) VALUES (1, 1);
+INSERT INTO tb_topic_likes (topic_id, user_id) VALUES (2, 2);
+INSERT INTO tb_topic_likes (topic_id, user_id) VALUES (2, 3);
+INSERT INTO tb_topic_likes (topic_id, user_id) VALUES (3, 2);
+INSERT INTO tb_topic_likes (topic_id, user_id) VALUES (3, 3);
+INSERT INTO tb_topic_likes (topic_id, user_id) VALUES (4, 3);
+
