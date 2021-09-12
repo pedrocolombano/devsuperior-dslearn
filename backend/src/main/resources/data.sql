@@ -38,3 +38,4 @@ INSERT INTO tb_section (title, description, position, img_uri, resource_id, prer
 
 INSERT INTO tb_enrollment (user_id, offer_id, enroll_moment, refund_moment, available, only_update) VALUES (1, 1, '2021-07-28T11:49:15Z', null, FALSE, FALSE);
 INSERT INTO tb_enrollment (user_id, offer_id, enroll_moment, refund_moment, available, only_update) VALUES (2, 1, '2021-08-12T11:49:15Z', null, FALSE, FALSE);
+
