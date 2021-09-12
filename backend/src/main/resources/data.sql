@@ -75,3 +75,10 @@ INSERT INTO tb_topic_likes (topic_id, user_id) VALUES (3, 2);
 INSERT INTO tb_topic_likes (topic_id, user_id) VALUES (3, 3);
 INSERT INTO tb_topic_likes (topic_id, user_id) VALUES (4, 3);
 
+
+INSERT INTO tb_reply (body, moment, topic_id, author_id) VALUES ('Usamos as tags com H com o intuito para títulos e subtítulos, a tag p são para parágrafos de texto', '2021-08-29T22:19:45Z', 1, 3);
+INSERT INTO tb_reply (body, moment, topic_id, author_id) VALUES ('Deu certo, valeu!', '2021-08-30T10:15:00Z', 1, 2);
+
+INSERT INTO tb_reply_likes (reply_id, user_id) VALUES (1, 2); 
+
+
