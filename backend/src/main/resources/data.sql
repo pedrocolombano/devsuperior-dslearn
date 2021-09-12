@@ -58,3 +58,6 @@ INSERT INTO tb_lessons_done (lesson_id, user_id, offer_id) VALUES (2, 1, 1);
 INSERT INTO tb_lessons_done (lesson_id, user_id, offer_id) VALUES (3, 1, 1);
 INSERT INTO tb_lessons_done (lesson_id, user_id, offer_id) VALUES (4, 1, 1);
 
+
+INSERT INTO tb_deliver (uri, moment, status, feedback, correct_count, user_id, offer_id, lesson_id) VALUES ('https://github.com/pedromecf/dslearn', '2021-08-30T12:31:29Z', 0, 'A tarefa foi entregue, aguardando correção', 5, 1, 1, 4);
+

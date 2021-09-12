@@ -10,6 +10,7 @@ import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.devsuperior.dslearn.entities.pk.EnrollmentPK;
@@ -34,6 +35,9 @@ public class Enrollment implements Serializable {
 	
 	@ManyToMany(mappedBy = "enrollmentsDone")
 	private Set<Lesson> lessonsDone = new HashSet<>();
+	
+	@OneToMany(mappedBy = "enrollment")
+	private Set<Deliver> deliveries = new HashSet<>();
 	
 	public Enrollment() {
 		
@@ -99,6 +103,10 @@ public class Enrollment implements Serializable {
 
 	public Set<Lesson> getLessonsDone() {
 		return lessonsDone;
+	}
+	
+	public Set<Deliver> getDeliveries() {
+		return deliveries;
 	}
 	
 	@Override
