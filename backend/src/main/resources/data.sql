@@ -31,11 +31,30 @@ INSERT INTO tb_resource (title, description, position, img_uri, type, offer_id) 
 INSERT INTO tb_resource (title, description, position, img_uri, type, offer_id) VALUES ('Lives', 'Lives exclusivas para alunos', 3, 'https://w7.pngwing.com/pngs/702/830/png-transparent-computer-icons-webcam-web-camera-electronics-share-icon-web-chat.png', 0, 1);
 
 
-INSERT INTO tb_section (title, description, position, img_uri, resource_id, prerequisite_id) VALUES ('Conhecendo HTML', 'Neste capítulo aprenderemos a base do HTML sua aplicação na Web', 1, 'https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582748_1280.png', 1, null);
-INSERT INTO tb_section (title, description, position, img_uri, resource_id, prerequisite_id) VALUES ('Conceitos Básicos', 'Neste capítulo serão passados os conceitos básicos da utilização do HTML', 2, 'https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582748_1280.png', 1, 1);
-INSERT INTO tb_section (title, description, position, img_uri, resource_id, prerequisite_id) VALUES ('Entendendo HTML 5 com CSS 3', 'Neste capítulo iremos inserir CSS à nosso projeto HTML', 3, 'http://blog.4linux.com.br/wp-content/uploads/2018/03/Curso-de-Desenvolvimento-Web.png', 1, 2);
+INSERT INTO tb_section (title, description, position, img_uri, resource_id, prerequisite_id) VALUES ('1 - Conhecendo HTML', 'Neste capítulo aprenderemos a base do HTML sua aplicação na Web', 1, 'https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582748_1280.png', 1, null);
+INSERT INTO tb_section (title, description, position, img_uri, resource_id, prerequisite_id) VALUES ('2 - Conceitos Básicos', 'Neste capítulo serão passados os conceitos básicos da utilização do HTML', 2, 'https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582748_1280.png', 1, 1);
+INSERT INTO tb_section (title, description, position, img_uri, resource_id, prerequisite_id) VALUES ('3 - Entendendo HTML 5 com CSS 3', 'Neste capítulo iremos inserir CSS à nosso projeto HTML', 3, 'http://blog.4linux.com.br/wp-content/uploads/2018/03/Curso-de-Desenvolvimento-Web.png', 1, 2);
 
 
 INSERT INTO tb_enrollment (user_id, offer_id, enroll_moment, refund_moment, available, only_update) VALUES (1, 1, '2021-07-28T11:49:15Z', null, FALSE, FALSE);
 INSERT INTO tb_enrollment (user_id, offer_id, enroll_moment, refund_moment, available, only_update) VALUES (2, 1, '2021-08-12T11:49:15Z', null, FALSE, FALSE);
+
+
+INSERT INTO tb_lesson (title, position, section_id) VALUES ('Tags Básicas', 1, 1);
+INSERT INTO tb_content (id, text_content, video_uri) VALUES (1, 'Nesta aula aprenderemos as tags básicas da linguagem HTML', 'https://www.youtube.com/watch?v=ZaNVBhZUFIg');
+
+INSERT INTO tb_lesson (title, position, section_id) VALUES ('Tags de texto', 2, 1);
+INSERT INTO tb_content (id, text_content, video_uri) VALUES (2, 'Nesta aula aprenderemos as tags de texto da linguagem HTML', 'https://www.youtube.com/watch?v=ZaNVBhZUFIg');
+
+INSERT INTO tb_lesson (title, position, section_id) VALUES ('Trabalhando com imagens', 3, 1);
+INSERT INTO tb_content (id, text_content, video_uri) VALUES (3, 'Nesta aula teremos uma introdução à imagens em HTML', 'https://www.youtube.com/watch?v=ZaNVBhZUFIg');
+
+INSERT INTO tb_lesson (title, position, section_id) VALUES ('Teste: Use tudo o que aprendeu até agora', 4, 1);
+INSERT INTO tb_task (id, description, question_count, approval_count, weight, due_date) VALUES (4, 'Realizar entrega do trabalho conforme diagrama', 5, 3, 1.0, '2021-09-15T23:59:59Z');
+
+
+INSERT INTO tb_lessons_done (lesson_id, user_id, offer_id) VALUES (1, 1, 1);
+INSERT INTO tb_lessons_done (lesson_id, user_id, offer_id) VALUES (2, 1, 1);
+INSERT INTO tb_lessons_done (lesson_id, user_id, offer_id) VALUES (3, 1, 1);
+INSERT INTO tb_lessons_done (lesson_id, user_id, offer_id) VALUES (4, 1, 1);
 
