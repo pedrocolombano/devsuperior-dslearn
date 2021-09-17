@@ -12,12 +12,12 @@ import com.devsuperior.dslearn.services.UserService;
 
 @RestController
 @RequestMapping("/users")
-public class UserControllers {
+public class UserController {
 
 	private UserService userService;
 
 	@Autowired
-	public UserControllers(UserService userService) {
+	public UserController(UserService userService) {
 		this.userService = userService;
 	}
 	

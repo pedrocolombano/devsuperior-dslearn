@@ -103,6 +103,15 @@ public class User implements UserDetails, Serializable {
 		this.notifications.add(notification);
 	}
 	
+	public boolean hasRole(String roleName) {
+		for (Role role : this.roles) {
+			if (role.getAuthority().equals(roleName)) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		return this.roles.stream().map(role -> new SimpleGrantedAuthority(role.getAuthority())).collect(Collectors.toSet());

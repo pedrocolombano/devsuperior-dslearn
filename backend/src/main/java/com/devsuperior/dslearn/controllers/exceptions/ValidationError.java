@@ -1,4 +1,4 @@
-package com.devsuperior.dslearn.resources.exceptions;
+package com.devsuperior.dslearn.controllers.exceptions;
 
 import java.time.Instant;
 import java.util.ArrayList;
