@@ -59,7 +59,7 @@ INSERT INTO tb_lessons_done (lesson_id, user_id, offer_id) VALUES (3, 1, 1);
 INSERT INTO tb_lessons_done (lesson_id, user_id, offer_id) VALUES (4, 1, 1);
 
 
-INSERT INTO tb_deliver (uri, moment, status, feedback, correct_count, user_id, offer_id, lesson_id) VALUES ('https://github.com/pedromecf/dslearn', '2021-08-30T12:31:29Z', 0, 'A tarefa foi entregue, aguardando correção', 5, 1, 1, 4);
+INSERT INTO tb_deliver (uri, moment, status, feedback, correct_count, user_id, offer_id, lesson_id) VALUES ('https://github.com/pedromecf/dslearn', '2021-08-30T12:31:29Z', 0, null, null, 1, 1, 4);
 
 
 INSERT INTO tb_topic (title, body, moment, author_id, offer_id, lesson_id) VALUES ('Dúvida - Tags Básicas', 'Estou com dúvidas em relação a quando utilizar as tags p e h6, não entendi corretamente quando usar cada um', '2021-08-29T20:56:31Z', 2, 1, 1);
