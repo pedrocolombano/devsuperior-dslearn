@@ -7,9 +7,12 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+import com.devsuperior.dslearn.dto.UserDTO;
 import com.devsuperior.dslearn.entities.User;
 import com.devsuperior.dslearn.repositories.UserRepository;
+import com.devsuperior.dslearn.services.exceptions.ResourceNotFoundException;
 
 @Service
 public class UserService implements UserDetailsService {
@@ -21,6 +24,12 @@ public class UserService implements UserDetailsService {
 	@Autowired
 	public UserService(UserRepository userRepository) {
 		this.userRepository = userRepository;
+	}
+	
+	@Transactional(readOnly = true)
+	public UserDTO findById(Long id) {
+		User user = this.userRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("User id not found"));
+		return new UserDTO(user);
 	}
 	
 	@Override
