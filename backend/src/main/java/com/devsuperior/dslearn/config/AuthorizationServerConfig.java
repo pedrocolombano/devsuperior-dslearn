@@ -17,6 +17,7 @@ import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenCo
 import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 
 import com.devsuperior.dslearn.components.JwtTokenEnhancer;
+import com.devsuperior.dslearn.services.UserService;
 
 @Configuration
 @EnableAuthorizationServer
@@ -36,7 +37,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 
 	@Autowired
 	private JwtTokenEnhancer tokenEnhancer;
-	
+
 	@Value("${security.oauth2.client.client-id}")
 	private String clientId;
 
@@ -46,13 +47,17 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 	@Value("${jwt.duration}")
 	private Integer jwtDuration;
 
+	@Autowired
+	private UserService userDetailsService;
+
 	@Override
 	public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
 		TokenEnhancerChain chain = new TokenEnhancerChain();
 		chain.setTokenEnhancers(List.of(this.tokenEnhancer, this.accessTokenConverter));
-		
+
 		endpoints.authenticationManager(this.authenticationManager).tokenStore(this.tokenStore)
-				.accessTokenConverter(this.accessTokenConverter).tokenEnhancer(chain);
+				.accessTokenConverter(this.accessTokenConverter).tokenEnhancer(chain)
+				.userDetailsService(this.userDetailsService);
 	}
 
 	@Override
@@ -63,7 +68,8 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 	@Override
 	public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
 		clients.inMemory().withClient(this.clientId).secret(this.passwordEncoder.encode(this.clientSecret))
-				.scopes("read", "write").authorizedGrantTypes("password").accessTokenValiditySeconds(this.jwtDuration);
+				.scopes("read", "write").authorizedGrantTypes("password", "refresh_token")
+				.accessTokenValiditySeconds(this.jwtDuration).refreshTokenValiditySeconds(this.jwtDuration);
 	}
 
 }

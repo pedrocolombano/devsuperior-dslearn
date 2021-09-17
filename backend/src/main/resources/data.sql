@@ -15,7 +15,7 @@ INSERT INTO tb_user_role (user_id, role_id) VALUES (3, 3);
 
 
 INSERT INTO tb_notification (text, moment, read, route, user_id) VALUES ('Ficou muito bom, parabéns', '2021-05-24T12:56:21Z', TRUE, 'Tarefa - Validação e segurança', 1); 
-INSERT INTO tb_notification (text, moment, read, route, user_id) VALUES ('Ficou muito bom, parabéns', '2021-07-15T05:21:10Z', FALSE, 'Tarefa - TDD - Introdução a Testes', 1); 
+INSERT INTO tb_notification (text, moment, read, route, user_id) VALUES ('Ficou muito bom, parabéns', '2021-07-15T05:21:10Z', FALSE, 'Tarefa - TDD e Introdução a Testes', 1); 
 INSERT INTO tb_notification (text, moment, read, route, user_id) VALUES ('Ficou muito bom, parabéns', '2021-08-30T17:38:59Z', FALSE, 'Tarefa - Domínio ORM', 2); 
 
 
