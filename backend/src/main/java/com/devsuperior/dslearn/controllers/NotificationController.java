@@ -8,6 +8,7 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.devsuperior.dslearn.dto.NotificationDTO;
@@ -26,8 +27,9 @@ public class NotificationController {
 
 	@GetMapping
 	public ResponseEntity<Page<NotificationDTO>> notificationsForCurrentUser(
+			@RequestParam(name = "unreadOnly", defaultValue = "false") Boolean unreadOnly,
 			@PageableDefault(page = 0, size = 15, sort = "moment", direction = Direction.DESC) Pageable pageable) {
-		Page<NotificationDTO> notifications = this.notificationService.notificationsForCurrentUser(pageable);
+		Page<NotificationDTO> notifications = this.notificationService.notificationsForCurrentUser(unreadOnly, pageable);
 		return ResponseEntity.ok(notifications);
 	}
 
